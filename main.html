@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Main</title>
+    <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="assets/js/app.js"></script>
+  </head>
+  <body>
+    <h1>You are logged in and are viewing the main page!</h1>
+    <button id="newsButton" data-val="politics">politics</button>
+    <button id="newsButton" data-val="world">world</button>
+
+    <div id="userLoginDiv"></div>
+
+    <script>
+      firebase.auth().onAuthStateChanged(function(user) {
+        if (!user) {
+          window.location = "index.html";
+        }
+      });
+    </script>
+  </body>
+</html>
